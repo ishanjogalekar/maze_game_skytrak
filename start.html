@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/mazing.css">
+    <!--Adding icon-->
+    <link rel="icon" href="https://i.ibb.co/Fw1bGCk/skylogo.png" type="image/icon type">
+    <title>Maze Game</title>
+    <img align ="right" src="https://i.ibb.co/61xyXnd/skylogo.png" alt="skytrak" border="0" width="250" height="100" >
+    
+</head>
+<body>
+    <center>
+        <h1>Maze Game</h1>
+    </center>
+    
+<h3>    
+<center>
+<div id="maze_container"></div>
+
+<script src="/maze-builder.js"></script>
+<script src="/fancy-maze-builder.js"></script>
+<script src="/mazing.js"></script>
+<script>
+var Maze, MazeGame;
+const makeMaze = (id, width, height, speech = false) => {
+  Maze = new FancyMazeBuilder(width, height);
+  Maze.display(id);
+  MazeGame = new Mazing("maze");
+  if(speech) {
+    MazeGame.enableSpeech();
+    }
+  }
+  makeMaze("maze_container", 12, 12);
+</script>
+<button onClick="window.location.reload();">Reset maze</button>
+</center>
+</h3>    
+</body>
+</html>
